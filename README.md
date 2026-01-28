@@ -1,4 +1,5 @@
-<img width="1280" height="800" alt="Linkedin-Feature" src="https://github.com/user-attachments/assets/015de388-76c5-492f-92b1-36fbecc370e6" />
+<img width="1280" height="800" alt="Linkedin-Feature" src="https://github.com/user-attachments/assets/52df86b4-c782-46d5-99b1-ebcd115876f9" />
+
 
 # Foxtocks Dashboard
 
