@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+
+    <!-- ====== Primary SEO ======== -->
+    <title>Foxtocks Dashboard</title>
+    <meta name="description"
+      content="Foxtocks dashboard UI for portfolio tracking, watchlists, market snapshots, and analytics charts." />
+    <meta name="keywords"
+      content="Foxtocks, dashboard, stocks, portfolio, watchlist, trading, market analytics, finance UI" />
+    <meta name="author" content="Foxtocks" />
+    <meta name="robots" content="index, follow" />
+    <meta name="language" content="English" />
+    <meta name="theme-color" content="#6A3BFF" />
+    <meta name="color-scheme" content="light" />
+
+    <!-- ====== Icons ====== -->
+    <link rel="icon" href="images/fox.png" />
+
+    <!--  ====== Fonts ====== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet" />
+
+    <!-- ====== CSS ====== -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="fx-app">
+
+      <!-- =========== Sidebar layout ================ -->
+      <aside class="fx-side" id="sidebar">
+        <div class="fx-brand">
+          <img src="images/fox.png" alt="Foxtocks brand logo icon">
+          Foxtocks
+        </div>
+
+        <div class="fx-sideLabel">User Panel</div>
+
+        <!-- ============ Primary sidebar navigation ============= -->
+        <nav class="fx-nav">
+          <a class="active" href="#">
+            <svg class="fx-ico" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
+              <path d="M4 4h7v7H4V4Zm9 0h7v4h-7V4ZM13 10h7v10h-7V10ZM4 13h7v7H4v-7Z" fill="currentColor" />
+            </svg>
+            Dashboard
+          </a>
+
+          <a href="#">
+            <svg class="fx-ico" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
+              <path d="M4 7h16v12H4V7Zm2 2v8h12V9H6Z" fill="currentColor" />
+              <path d="M8 5h8v2H8V5Z" fill="currentColor" opacity=".7" />
+            </svg>
+            Portfolio
+          </a>
+
+          <a href="#">
+            <svg class="fx-ico" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
+              <path d="M4 18V6h2v12H4Zm7 0V6h2v12h-2Zm7 0V6h2v12h-2Z" fill="currentColor" opacity=".75" />
+              <path d="M7 12h3v2H7v-2Zm7-5h3v2h-3V7Zm0 10h3v2h-3v-2Z" fill="currentColor" />
+            </svg>
+            Trading &amp; Market
+          </a>
+
+          <a href="#">
+            <svg class="fx-ico" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
+              <path d="M4 5h16v14H4V5Zm2 2v2h12V7H6Zm0 4v6h12v-6H6Z" fill="currentColor" />
+            </svg>
+            Reasearch Portal
+          </a>
+
+          <a href="#">
+            <svg class="fx-ico" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
+              <path d="M12 3 4 7v2h16V7l-8-4Zm-6 8h12v10H6V11Z" fill="currentColor" opacity=".75" />
+              <path d="M10 13h4v6h-4v-6Z" fill="currentColor" />
+            </svg>
+            Wallet Transfer Pay
+          </a>
+
+          <a href="#">
+            <svg class="fx-ico" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
+              <path d="M4 7h12v2H4V7Zm0 8h12v2H4v-2Zm14-6 2 3-2 3v-2h-3v-2h3V9Z" fill="currentColor" />
+            </svg>
+            Reporting &amp; Transaction
+          </a>
+
+          <a href="#">
+            <svg class="fx-ico" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
+              <path d="M6 7h12v10H6V7Zm2 2v6h8V9H8Z" fill="currentColor" opacity=".8" />
+              <path d="M10 5h4v2h-4V5Z" fill="currentColor" />
+            </svg>
+            Tutorial
+          </a>
+        </nav>
+
+        <!-- ============= Quote / tip card ============= -->
+        <div class="fx-thought">
+          <div class="fx-bulb" aria-hidden="true">
+            <img src="images/blub.png" alt="Light bulb illustration icon">
+          </div>
+          <h4>Thoughts Time</h4>
+          <p>If you aren’t willing to own a stock for 10 years, don’t even think about owning it for 10 minutes.</p>
+        </div>
+
+        <!-- ========= Logout action =========== -->
+        <div class="fx-logout">
+          <svg class="fx-ico" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
+            <path d="M10 7V5a2 2 0 0 1 2-2h7v18h-7a2 2 0 0 1-2-2v-2" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" />
+            <path d="M3 12h10" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+            <path d="M6 9 3 12l3 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+          Logout
+        </div>
+      </aside>
+
+      <!-- ==========  Mobile overlay ============ -->
+      <div class="fx-overlay" id="overlay"></div>
+
+      <!-- =========== Main content area ============= -->
+      <main class="fx-main">
+
+        <!-- ========= Top header: burger + greeting + search + actions ============== -->
+        <header class="fx-top">
+          <div class="fx-topLeft">
+            <button class="fx-burger" id="burger" type="button" aria-label="Open menu">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
+                <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+              </svg>
+              Menu
+            </button>
+            <h2 class="fx-hello">Hello Matt,</h2>
+          </div>
+
+          <div class="fx-topRight">
+            <!-- Global search -->
+            <div class="fx-search">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
+                <path d="M10.5 18a7.5 7.5 0 1 1 0-15 7.5 7.5 0 0 1 0 15Z" stroke="currentColor" stroke-width="2"
+                  opacity=".75" />
+                <path d="M16.5 16.5 21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity=".75" />
+              </svg>
+              <input type="text" placeholder="Search for stocks and more" />
+            </div>
+
+            <!-- Notifications -->
+            <button class="fx-iconBtn" type="button" aria-label="Notifications">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
+                <path d="M12 22a2.2 2.2 0 0 0 2.2-2.2h-4.4A2.2 2.2 0 0 0 12 22Z" fill="currentColor" opacity=".75" />
+                <path d="M18 16v-5a6 6 0 0 0-12 0v5l-2 2h16l-2-2Z" stroke="currentColor" stroke-width="2"
+                  stroke-linejoin="round" />
+              </svg>
+            </button>
+
+            <!-- User avatar -->
+            <div class="fx-avatar" aria-label="User avatar">
+              <img src="images/mart.png" alt="User profile avatar photo">
+            </div>
+          </div>
+        </header>
+
+        <section class="fx-content">
+
+          <!-- ========== My Stocks: horizontal stock cards + next control =========== -->
+          <div class="fx-card fx-stocks">
+            <div class="fx-stocksTitle">My Stocks</div>
+
+            <div class="fx-stocksRow" id="stocksRow">
+              <!-- Stock card: Nvidia -->
+              <div class="fx-stock bg-nvda">
+                <div class="fx-stockTop">
+                  <div class="fx-co">
+                    <div class="fx-logoBox" aria-hidden="true">
+                      <img src="images/nvidia 1.png" alt="Nvidia company logo">
+                    </div>
+                    <p class="fx-coName">Nvidia</p>
+                  </div>
+                  <div class="fx-coRight">
+                    <div class="fx-ticker">NVDA</div>
+                    <div class="fx-chg pos">+5.63</div>
+                  </div>
+                </div>
+
+                <div class="fx-stockMid">
+                  <div class="fx-cv">
+                    <span>Current Value</span>
+                    <strong>$203.65</strong>
+                  </div>
+                  <svg class="fx-spark" viewBox="0 0 100 40" data-spark="green" aria-label="Nvidia price trend chart"></svg>
+                </div>
+              </div>
+
+              <!-- Stock card: Meta -->
+              <div class="fx-stock bg-meta">
+                <div class="fx-stockTop">
+                  <div class="fx-co">
+                    <div class="fx-logoBox" aria-hidden="true">
+                      <img src="images/meta-1 1.png" alt="Meta company logo">
+                    </div>
+                    <p class="fx-coName">Meta</p>
+                  </div>
+                  <div class="fx-coRight">
+                    <div class="fx-ticker">META</div>
+                    <div class="fx-chg neg">-4.44</div>
+                  </div>
+                </div>
+
+                <div class="fx-stockMid">
+                  <div class="fx-cv">
+                    <span>Current Value</span>
+                    <strong>$151.74</strong>
+                  </div>
+                  <svg class="fx-spark" viewBox="0 0 100 40" data-spark="white" aria-label="Meta price trend chart"></svg>
+                </div>
+              </div>
+
+              <!-- Stock card: Tesla -->
+              <div class="fx-stock bg-tsla">
+                <div class="fx-stockTop">
+                  <div class="fx-co">
+                    <div class="fx-logoBox" aria-hidden="true">
+                      <img src="images/tesla-motors-1 1.png" alt="Tesla company logo">
+                    </div>
+                    <p class="fx-coName">Tesla Inc</p>
+                  </div>
+                  <div class="fx-coRight">
+                    <div class="fx-ticker">TSLA</div>
+                    <div class="fx-chg pos">+17.63</div>
+                  </div>
+                </div>
+
+                <div class="fx-stockMid">
+                  <div class="fx-cv">
+                    <span>Current Value</span>
+                    <strong>$177.90</strong>
+                  </div>
+                  <svg class="fx-spark" viewBox="0 0 100 40" data-spark="green" aria-label="Tesla price trend chart"></svg>
+                </div>
+              </div>
+
+              <!-- Stock card: Apple -->
+              <div class="fx-stock bg-aapl">
+                <div class="fx-stockTop">
+                  <div class="fx-co">
+                    <div class="fx-logoBox" aria-hidden="true">
+                      <img src="images/391px-Apple_logo_black 1.png" alt="Apple company logo">
+                    </div>
+                    <p class="fx-coName">Apple Inc</p>
+                  </div>
+                  <div class="fx-coRight">
+                    <div class="fx-ticker">AAPL</div>
+                    <div class="fx-chg pos">+23.41</div>
+                  </div>
+                </div>
+
+                <div class="fx-stockMid">
+                  <div class="fx-cv">
+                    <span>Current Value</span>
+                    <strong>$145.93</strong>
+                  </div>
+                  <svg class="fx-spark" viewBox="0 0 100 40" data-spark="green" aria-label="Apple price trend chart"></svg>
+                </div>
+              </div>
+
+              <!-- Stock card: AMD -->
+              <div class="fx-stock bg-amd">
+                <div class="fx-stockTop">
+                  <div class="fx-co">
+                    <div class="fx-logoBox" aria-hidden="true">
+                      <img src="images/amd-logo-1 1.png" alt="AMD company logo">
+                    </div>
+                    <p class="fx-coName">Advanced Micr..</p>
+                  </div>
+                  <div class="fx-coRight">
+                    <div class="fx-ticker">&nbsp;</div>
+                    <div class="fx-chg">&nbsp;</div>
+                  </div>
+                </div>
+
+                <div class="fx-stockMid">
+                  <div class="fx-cv">
+                    <span>Current Value</span>
+                    <strong>$75.40</strong>
+                  </div>
+                  <svg class="fx-spark" viewBox="0 0 100 40" data-spark="none" aria-label="AMD price trend chart"></svg>
+                </div>
+              </div>
+            </div>
+
+            <!-- Stocks carousel control -->
+            <button class="fx-next" id="stocksNext" type="button" aria-label="Next stocks">
+              <img src="images/arrow-right.png" alt="Next arrow icon">
+            </button>
+          </div>
+
+          <!-- ============ Mid grid: balance, market, snapshot ============ -->
+          <div class="fx-midGrid">
+
+            <!-- Balance summary -->
+            <div class="fx-card fx-pad">
+              <h3 class="fx-title">Balance</h3>
+
+              <div class="fx-balanceRow">
+                <div class="fx-balancePill">$14,032.56</div>
+                <div class="fx-balancePct">+5.63%</div>
+              </div>
+
+              <h3 class="fx-investLabel">Invested</h3>
+              <div class="fx-investBox">
+                <strong>$7,532.21</strong>
+                <div class="fx-miniGo" aria-hidden="true">
+                  <img src="images/arrow-right-2.png" alt="Go to invested details arrow icon">
+                </div>
+              </div>
+
+              <div class="fx-subLabel">Top Stock</div>
+
+              <div class="fx-topStockHead">
+                <div class="fx-topStockLeft">
+                  <div class="fx-tslaLogo" aria-hidden="true">
+                    <img src="images/Tesla-red-icon.png" alt="Tesla logo icon">
+                  </div>
+                  <p class="fx-topStockName">Tesla Inc</p>
+                </div>
+
+                <div class="fx-topStockRight">
+                  <div class="t">TSLA</div>
+                  <div class="p">+17.63</div>
+                </div>
+              </div>
+
+              <div class="fx-topStockVals">
+                <div class="fx-kpi">
+                  <span>Invested Value</span>
+                  <strong>$29.34</strong>
+                </div>
+                <div class="fx-kpi">
+                  <span>Current Value</span>
+                  <strong>$177.90</strong>
+                </div>
+                <svg class="fx-miniSpark" viewBox="0 0 100 35" id="topSpark" aria-label="Top stock mini trend chart"></svg>
+              </div>
+
+              <!-- Dropdown / more control -->
+              <button class="fx-drop" type="button" aria-label="More">
+                <img src="images/arrow-down.png" alt="Dropdown arrow icon">
+              </button>
+
+              <!-- Decorative row (placeholder/example) -->
+              <div class="fx-ghostRow" aria-hidden="true">
+                <div class="left">
+                  <div class="fx-tslaLogo">
+                    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
+                      <path d="M6 6c4-2 8-2 12 0" stroke="#E11D2E" stroke-width="2.3" stroke-linecap="round" />
+                      <path d="M12 6v14" stroke="#E11D2E" stroke-width="2.3" stroke-linecap="round" />
+                    </svg>
+                  </div>
+                  Tesla Inc
+                </div>
+                <div class="right">
+                  <span style="opacity:.7">TSLA</span>
+                  <span style="color:#16A34A">+1</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Market chart -->
+            <div class="fx-card fx-pad">
+              <div class="fx-tabs" id="mTabs">
+                <div class="fx-tab active" data-market="nasdaq">NASDAQ</div>
+                <div class="fx-tab" data-market="sse">SSE</div>
+                <div class="fx-tab" data-market="euronext">Euronext</div>
+                <div class="fx-tab" data-market="bse">BSE</div>
+              </div>
+
+              <div class="fx-range" id="mRange">
+                <span class="r active" data-range="1d">1D</span>
+                <span class="sep"></span>
+                <span class="r" data-range="5d">5D</span>
+                <span class="sep"></span>
+                <span class="r" data-range="1m">1M</span>
+                <span class="sep"></span>
+                <span class="r" data-range="6m">6M</span>
+                <span class="sep"></span>
+                <span class="r" data-range="1y">1Y</span>
+              </div>
+
+              <svg class="fx-marketSvg" viewBox="0 0 900 300" id="marketSvg" aria-label="Market index chart"></svg>
+
+              <div class="fx-marketMeta">
+                <div class="fx-metaItem">
+                  <span>High</span>
+                  <strong>11,691.89</strong>
+                </div>
+                <div class="fx-metaItem">
+                  <span>Prev Close (Avr 28 Days)</span>
+                  <strong>11,512.41</strong>
+                </div>
+                <div class="fx-metaItem">
+                  <span>Low</span>
+                  <strong>11,470.47</strong>
+                </div>
+                <div class="fx-metaItem">
+                  <span>Open</span>
+                  <strong>11,690.11</strong>
+                </div>
+              </div>
+            </div>
+
+            <!-- Snapshot metrics -->
+            <div class="fx-card fx-pad">
+              <h3 class="fx-title">Snapshot</h3>
+
+              <div class="fx-snapTop">
+                <div class="fx-snapItem">
+                  <span>Prev Close</span>
+                  <strong>12,051.48</strong>
+                </div>
+                <div class="fx-snapItem" style="text-align:right">
+                  <span>Open</span>
+                  <strong>12.000.21</strong>
+                </div>
+              </div>
+
+              <div class="fx-divider"></div>
+
+              <!-- Day range -->
+              <div class="fx-barBlock">
+                <div class="fx-barRow">
+                  <div>
+                    11,999.87
+                    <small>Day Low</small>
+                  </div>
+                  <div style="text-align:right">
+                    12,248.15
+                    <small>Day High</small>
+                  </div>
+                </div>
+
+                <div class="fx-bar">
+                  <div class="fill"></div>
+                  <div class="pin" style="left:78%"></div>
+                </div>
+                <div class="fx-barValue">12.166.60</div>
+              </div>
+
+              <div class="fx-divider"></div>
+
+              <!-- 52 week range -->
+              <div class="fx-barBlock">
+                <div class="fx-barRow">
+                  <div>
+                    10,440.64
+                    <small>52 Week Low</small>
+                  </div>
+                  <div style="text-align:right">
+                    15,265.42
+                    <small>52 Week High</small>
+                  </div>
+                </div>
+
+                <div class="fx-bar">
+                  <div class="fill"></div>
+                  <div class="pin" style="left:24%"></div>
+                </div>
+                <div class="fx-barValue">12.166.60</div>
+              </div>
+
+              <div class="fx-divider"></div>
+
+              <div class="fx-snapFoot">
+                <div class="fx-snapItem">
+                  <span>Trade Time</span>
+                  <strong>05:16 PM</strong>
+                </div>
+                <div class="fx-snapItem" style="text-align:right">
+                  <span>Trade Date</span>
+                  <strong>01/27/23</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ============ Bottom grid: analytics + watchlist ============== -->
+          <div class="fx-bottomGrid">
+
+            <!-- Analytics chart -->
+            <div class="fx-card">
+              <div class="fx-anaHead">
+                <h3>Portfolio Analytics</h3>
+                <div class="fx-anaRanges" id="aRange">
+                  <span class="active" data-ar="1d">1D</span>
+                  <span data-ar="5d">5D</span>
+                  <span data-ar="1m">1M</span>
+                  <span data-ar="6m">6M</span>
+                  <span data-ar="1y">1Y</span>
+                  <span data-ar="5y">5Y</span>
+                  <span data-ar="max">Max</span>
+                </div>
+              </div>
+
+              <div class="fx-anaBody">
+                <svg class="fx-anaSvg" viewBox="0 0 900 320" id="anaSvg" aria-label="Portfolio analytics chart"></svg>
+
+                <div class="fx-tip" id="tip">
+                  <small id="tipDate">Jan 30, 01:12:16 AM</small>
+                  <strong id="tipVal">$14,032.56</strong>
+                </div>
+              </div>
+            </div>
+
+            <!-- Watchlist -->
+            <div class="fx-card">
+              <div class="fx-watchHead">
+                <h3>Watchlist</h3>
+                <button class="fx-plus" type="button" aria-label="Add watchlist">
+                  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <path d="M12 5v14M5 12h14" stroke="#fff" stroke-width="2" stroke-linecap="round" />
+                  </svg>
+                </button>
+              </div>
+
+              <div class="fx-watchList">
+                <div class="fx-wItem">
+                  <div class="fx-wLeft">
+                    <div class="fx-wLogo">
+                      <img src="images/amazon-icon-1 1.png" alt="Amazon company logo">
+                    </div>
+                    <div class="fx-wName">
+                      <p>Amazon.com, Inc.</p>
+                      <span>AMZN</span>
+                    </div>
+                  </div>
+                  <div class="fx-wRight">
+                    $102.24
+                    <span class="d pos">+3.02</span>
+                  </div>
+                </div>
+
+                <div class="fx-wItem">
+                  <div class="fx-wLeft">
+                    <div class="fx-wLogo">
+                      <img src="images/coca-cola-6 1.png" alt="Coca-Cola company logo">
+                    </div>
+                    <div class="fx-wName">
+                      <p>Coca-Cola Co</p>
+                      <span>KO</span>
+                    </div>
+                  </div>
+                  <div class="fx-wRight">
+                    $60.49
+                    <span class="d neg">-0.32</span>
+                  </div>
+                </div>
+
+                <div class="fx-wItem">
+                  <div class="fx-wLeft">
+                    <div class="fx-wLogo">
+                      <img src="images/bmw 1.png" alt="BMW company logo">
+                    </div>
+                    <div class="fx-wName">
+                      <p>Bayerische Motoren Werke AG</p>
+                      <span>BMW</span>
+                    </div>
+                  </div>
+                  <div class="fx-wRight">
+                    $92.94
+                    <span class="d pos">+0.59</span>
+                  </div>
+                </div>
+
+                <div class="fx-wItem">
+                  <div class="fx-wLeft">
+                    <div class="fx-wLogo">
+                      <img src="images/microsoft 1.png" alt="Microsoft company logo">
+                    </div>
+                    <div class="fx-wName">
+                      <p>Microsoft Corp</p>
+                      <span>MSFT</span>
+                    </div>
+                  </div>
+                  <div class="fx-wRight">
+                    $248.16
+                    <span class="d pos">+0.16</span>
+                  </div>
+                </div>
+
+                <div class="fx-wItem">
+                  <div class="fx-wLeft">
+                    <div class="fx-wLogo">
+                      <img src="images/ups 1.png" alt="UPS company logo">
+                    </div>
+                    <div class="fx-wName">
+                      <p>United Parcel Service, Inc.</p>
+                      <span>UPS</span>
+                    </div>
+                  </div>
+                  <div class="fx-wRight">
+                    $182.09
+                    <span class="d pos">+2.39</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </section>
+      </main>
+    </div>
+    <script src="js/custom.js"></script>
+  </body>
+</html>
